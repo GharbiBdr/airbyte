@@ -1,6 +1,6 @@
 steps: 
   - id: deploy
-    name: 'gcr.io/cloud-builders-community/kustomize'
+    name: 'gcr.io/cloud-builders/kustomize'
     args:
     - 'build'
     - 'k8s'
