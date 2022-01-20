@@ -1,11 +1,8 @@
 steps: 
-  - id: deploy
-    name: 'gcr.io/$PROJECT_ID/kustomize'
-    args:
-    - 'build'
-    - 'k8s'
-    env:
-      - 'APPLY=true'
-      - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
-      - 'CLOUDSDK_CONTAINER_CLUSTER=cluster-1'
-      - 'GCLOUD_PROJECT=sandbox-334514'
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: "bash"
+  args:
+  - "-c"
+  - |
+      RESPONSE=$(curl -i google.com | grep HTTP | cut -d' ' -f2)
+      if [ "200" != "$$RESPONSE" ]; then exit 1; fi
