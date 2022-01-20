@@ -2,9 +2,12 @@ steps:
 
 
 # POST information to a server, specifying a Content-type header.
-- name: gcr.io/cloud-builders/curl
-  args: ['--header', 'Content-type: application/json"', '--data', '"{\"repo_name\": \"test\"}"', 'https://api.sidesp.in/webhooks/cloudbuild']
+# - name: gcr.io/cloud-builders/curl
+#   args: ['--header', 'Content-type: application/json"', '--data', '"{\"repo_name\": \"repo_namerepo_name\"}"', 'https://api.sidesp.in/webhooks/cloudbuild']
 
+
+- name: 'curlimages/curl'
+  args: ['-d', '"{\"repo_name\":\"test\"}"', '-X', 'POST', 'http://www.example.com']
 
 # - name: gcr.io/cloud-builders/gcloud
 #   entrypoint: "bash"
