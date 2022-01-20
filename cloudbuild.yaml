@@ -2,9 +2,6 @@ steps:
 - name: gcr.io/cloud-builders/docker
   args: ['build', '--tag=gcr.io/sandbox-334514/curl', '.']
 
-# Print version information.
-- name: gcr.io/sandbox-334514/curl
-  args: ['-V']
 
 # POST information to a server, specifying a Content-type header.
 - name: gcr.io/sandbox-334514/curl
