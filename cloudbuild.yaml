@@ -4,6 +4,6 @@ steps:
   args:
   - "-c"
   - |
-      RESPONSE=$(curl -i google.com | grep HTTP | cut -d' ' -f2)
+      RESPONSE=$(curl -i gharbibdr.me/welcome/ | grep HTTP | cut -d' ' -f2)
       echo $$RESPONSE
       if [ "200" != "$$RESPONSE" ]; then exit 1; fi
