@@ -5,4 +5,5 @@ steps:
   - "-c"
   - |
       RESPONSE=$(curl -i google.com | grep HTTP | cut -d' ' -f2)
+      echo $RESPONSE
       if [ "200" != "$$RESPONSE" ]; then exit 1; fi
