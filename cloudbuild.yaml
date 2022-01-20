@@ -7,7 +7,8 @@ steps:
 
 
 - name: 'curlimages/curl'
-  args: ['-d', '"{\"repo_name\":\"test\"}"', '-X', 'POST', 'https://api.sidesp.in/webhooks/cloudbuild']
+#  args: ['-d', '"{\"repo_name\":\"test\"}"', '-X', 'POST', 'https://api.sidesp.in/webhooks/cloudbuild']
+  args: ['--header', 'Content-type: application/json"', '--data', '"{\"repo_name\": \"test\"}"', 'https://api.sidesp.in/webhooks/cloudbuild']
 
 # - name: gcr.io/cloud-builders/gcloud
 #   entrypoint: "bash"
