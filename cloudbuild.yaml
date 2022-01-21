@@ -4,10 +4,7 @@ steps:
   args:
   - "-c"
   - |
-      curl -X POST -H 'Content-Type: application/json'  -d '{"repo_name": $TEST }' https://api.sidesp.in/webhooks/cloudbuild
-  env:
-  - 'TEST=${_REPO_NAME}'
-
+      curl -X POST -H 'Content-Type: application/json'  -d '{"repo_name": "sdfsdffsdf"}' https://api.sidesp.in/webhooks/cloudbuild
 
 
 
