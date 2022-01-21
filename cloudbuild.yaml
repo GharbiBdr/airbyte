@@ -4,7 +4,13 @@ steps:
   args:
   - "-c"
   - |
-      curl -X POST -H 'Content-Type: application/json'  -d '{"repo_name": "sdfsdffsdf"}' https://api.sidesp.in/webhooks/cloudbuild
+      curl -X POST -H 'Content-Type: application/json'  -d '{"repo_name": ${_IMAGE_NAME}}' https://api.sidesp.in/webhooks/cloudbuild
+
+
+substitutions:
+    _IMAGE_NAME: 'test-image'
+options:
+    dynamic_substitutions: true
 
 
 
