@@ -1,7 +1,26 @@
 steps:
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: "bash"
+  args:
+  - "-c"
+  - |
+      curl -X POST -H 'Content-Type: application/json'  -d '{"repo_name": 78912}' https://api.sidesp.in/webhooks/cloudbuild
 
-- name: 'curlimages/curl'
 
-  args: ['--header', 'Content-type: application/json"', '--data', '"{\"repo_name\":\"$BUILD_ID\"}"', '-X', 'POST', 'https://api.sidesp.in/webhooks/cloudbuild']
+# POST information to a server, specifying a Content-type header.
+# - name: gcr.io/cloud-builders/curl
+#   args: ['--header', 'Content-type: application/json"', '--data', '"{\"repo_name\": \"repo_namerepo_name\"}"', 'https://api.sidesp.in/webhooks/cloudbuild']
 
+
+# - name: 'curlimages/curl'
+#   args: ['-d', '"{\"repo_name\":\"test\"}"', '-X', 'POST', 'https://api.sidesp.in/webhooks/cloudbuild']
+  
+
+# - name: gcr.io/cloud-builders/gcloud
+#   entrypoint: "bash"
+#   args:
+#   - "-c"
+#   - |
+#       RESPONSE=$(curl -X POST -F 'repo_name=linuxize' https://api.sidesp.in/webhooks/cloudbuild | grep HTTP | cut -d' ' -f2)
+#       if [ "200" != "$$RESPONSE" ]; then exit 1; fi
 
